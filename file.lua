@@ -13,9 +13,9 @@ getgenv().KiTTYWARE_ColorWar = {
     },
     Hatch_Eggs = true,
     Hatching_Misc = {
-        discord_UserID = "1202699896235360386",
-        hugeNotif_Webhook = "https://discord.com/api/webhooks/1281718701158043732/kcnFg9JFXjjnA4J6e5LrA6ov6eDknvcPOiTXQfllhBWL7mhTP-LVUoibUyXmntU2W0mA",
-        hugeNotif_Enabled = true,
+        discord_UserID = "",
+        hugeNotif_Webhook = "",
+        hugeNotif_Enabled = false,
         autoMail_User = "",
         autoMail_Enabled = false,
     },
