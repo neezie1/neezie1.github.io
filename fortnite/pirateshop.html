@@ -6,6 +6,21 @@
     <meta name="theme-color" content="#0a0a0b">
     <meta name="color-scheme" content="dark">
     <title>Pirate Shop Access — 1 in 137,500 Wheel</title>
+
+    <!-- Open Graph / Discord Embed -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pirate Shop Access — 1 in 137,500 Wheel">
+    <meta property="og:description" content="Spin the wheel for a 1 in 137,500 chance at the Pirate Shop Access token. Choose your rolls and try your luck!">
+    <meta property="og:image" content="https://cdn.fortnite.bot/s43treasure/token.webp">
+    <meta property="og:image:alt" content="Pirate Shop Access Token">
+    <meta property="og:site_name" content="Pirate Shop Access Wheel">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pirate Shop Access — 1 in 137,500 Wheel">
+    <meta name="twitter:description" content="Spin the wheel for a 1 in 137,500 chance at the Pirate Shop Access token. Choose your rolls and try your luck!">
+    <meta name="twitter:image" content="https://cdn.fortnite.bot/s43treasure/token.webp">
+    <meta name="description" content="Spin the wheel for a 1 in 137,500 chance at the Pirate Shop Access token. Choose your rolls and try your luck!">
+    <link rel="icon" href="https://cdn.fortnite.bot/s43treasure/token.webp" type="image/webp">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,7 +106,6 @@
             letter-spacing: 0.02em;
         }
 
-        /* Elevated Card Surface */
         .card-elevated {
             background: linear-gradient(180deg, rgba(32, 32, 35, 0.92) 0%, rgba(20, 20, 22, 0.96) 100%);
             box-shadow:
@@ -116,21 +130,18 @@
             pointer-events: none;
         }
 
-        /* Glass Rim Effect */
         .glass-rim {
             position: relative;
             border: 1.5px solid rgba(255, 255, 255, 0.14);
             box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
         }
 
-        /* Golden Mythic Radial Gradient & Rim */
         .rarity-mythic {
             background: radial-gradient(circle at 50% 35%, #d99b26 0%, #6e4209 58%, #2b1803 100%);
             border: 1.5px solid rgba(255, 223, 107, 0.55);
             box-shadow: inset 0 0 22px rgba(255, 215, 0, 0.25);
         }
 
-        /* Floating Bob & Sheen Animations */
         @keyframes treasureBob {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-5px) rotate(1.5deg); }
@@ -154,7 +165,6 @@
             pointer-events: none;
         }
 
-        /* Gold Accent CTA Button */
         .gold-cta-btn {
             background: linear-gradient(to bottom, #ffe500 0%, #f5cc00 55%, #e8b800 100%);
             color: #1c1f3a;
@@ -182,7 +192,6 @@
             cursor: not-allowed;
         }
 
-        /* Subtle ring pulse behind the wheel */
         @keyframes ringPulse {
             0%, 100% { opacity: 0.55; transform: scale(1); }
             50% { opacity: 0.85; transform: scale(1.015); }
@@ -191,13 +200,11 @@
             animation: ringPulse 5.5s ease-in-out infinite;
         }
 
-        /* Chip / utility buttons */
         .chip-btn {
             background: linear-gradient(180deg, rgba(42, 42, 46, 0.85), rgba(30, 30, 33, 0.9));
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -225,7 +232,6 @@
             background: rgba(255, 255, 255, 0.015);
         }
 
-        /* iOS: prevent auto-zoom on input focus */
         @media screen and (max-width: 767px) {
             input, select, textarea {
                 font-size: 16px !important;
@@ -284,11 +290,9 @@
 
                     <!-- Interactive Wheel -->
                     <div class="relative w-full max-w-[400px] aspect-square flex items-center justify-center mx-auto my-5 sm:my-6">
-                        <!-- Ambient glow -->
                         <div class="wheel-ambient absolute inset-[2%] rounded-full bg-[radial-gradient(circle,rgba(255,229,0,0.07)_0%,transparent_65%)] pointer-events-none"></div>
                         <div class="absolute inset-[18%] rounded-full bg-[radial-gradient(circle,rgba(255,229,0,0.05)_0%,transparent_70%)] pointer-events-none"></div>
 
-                        <!-- Top Golden Pointer Needle -->
                         <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex flex-col items-center filter drop-shadow-[0_4px_10px_rgba(255,229,0,0.3)]">
                             <div class="w-8 h-10 bg-gradient-to-b from-[#fffbd6] via-[#ffe500] to-[#c88a00] shadow-xl flex items-start justify-center pt-1.5"
                                  style="clip-path: polygon(15% 0%, 85% 0%, 100% 35%, 50% 100%, 0% 35%);">
@@ -298,7 +302,6 @@
 
                         <canvas id="wheelCanvas" class="block w-full h-full cursor-pointer drop-shadow-[0_24px_50px_rgba(0,0,0,0.85)]" title="Click to Spin Wheel"></canvas>
 
-                        <!-- Center Spin Button -->
                         <button id="centerSpinBtn" type="button"
                                 class="absolute size-20 sm:size-24 md:size-28 rounded-full rarity-mythic treasure-sheen shadow-[0_12px_40px_rgba(0,0,0,0.6),0_0_0_4px_rgba(255,229,0,0.08),inset_0_0_22px_rgba(255,215,0,0.25)] flex flex-col items-center justify-center group hover:scale-105 active:scale-95 transition duration-200 z-20 cursor-pointer overflow-hidden">
                             <span class="treasure-bob relative size-10 sm:size-12 md:size-14 flex items-center justify-center">
@@ -356,7 +359,6 @@
 
                     <!-- Roll Controls Card -->
                     <section aria-label="Choose How Many Rolls" class="card-elevated overflow-hidden rounded-2xl border border-line p-3.5 sm:p-4 md:p-5">
-                        <!-- Boost Selector -->
                         <div class="mb-4 pb-4 border-b border-line">
                             <div class="flex items-center justify-between mb-2.5 gap-2">
                                 <span class="text-[10px] sm:text-[10.5px] font-bold uppercase tracking-[0.06em] sm:tracking-[0.08em] text-dim">Drop Rate Mode</span>
@@ -386,7 +388,6 @@
                                 <p class="text-[11.5px] sm:text-[12.5px] text-dim mt-0.5">Preset or custom amount</p>
                             </div>
 
-                            <!-- Instant Toggle -->
                             <label class="inline-flex items-center gap-2 cursor-pointer select-none rounded-lg border border-line bg-asphalt px-2.5 py-1.5 shrink-0">
                                 <input type="checkbox" id="instantModeToggle" class="sr-only peer">
                                 <div class="w-7 h-4 bg-raised rounded-full peer peer-checked:after:translate-x-3 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-bone after:rounded-full after:h-3 after:w-3 after:transition-all relative peer-checked:bg-buff after:shadow-sm"></div>
@@ -394,7 +395,6 @@
                             </label>
                         </div>
 
-                        <!-- Preset Buttons -->
                         <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mb-3">
                             <button type="button" data-rolls="1" class="preset-roll-btn rounded-xl py-2.5 sm:py-2 px-2 text-[12px] font-extrabold tnum transition bg-accent text-[#1c1f3a] cursor-pointer">1</button>
                             <button type="button" data-rolls="10" class="preset-roll-btn rounded-xl py-2.5 sm:py-2 px-2 text-[12px] font-extrabold tnum transition bg-asphalt hover:bg-raised text-bone border border-line cursor-pointer">10</button>
@@ -404,7 +404,6 @@
                             <button type="button" data-rolls="100000" class="preset-roll-btn rounded-xl py-2.5 sm:py-2 px-2 text-[12px] font-extrabold tnum transition bg-asphalt hover:bg-raised text-bone border border-line cursor-pointer">100K</button>
                         </div>
 
-                        <!-- Custom Input + Spin CTA -->
                         <div class="flex flex-col sm:flex-row gap-2.5">
                             <div class="relative flex-1">
                                 <input id="customRollInput" type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="10000000" value="1"
@@ -421,7 +420,6 @@
                             </button>
                         </div>
 
-                        <!-- Batch Odds + Auto-Spin -->
                         <div class="mt-3.5 pt-3.5 border-t border-line flex flex-wrap items-center justify-between gap-2">
                             <div class="text-[11.5px] sm:text-[12px] text-dim">
                                 Batch Odds: <span id="batchProbabilityPreview" class="tnum font-bold text-buff">0.000727%</span>
@@ -435,7 +433,6 @@
 
                     <!-- Stats & History Card -->
                     <section aria-label="Session Statistics and Roll Log" class="card-elevated overflow-hidden rounded-2xl border border-line flex flex-col flex-1">
-                        <!-- 3 Stat Cells -->
                         <div class="grid grid-cols-3 gap-px bg-line border-b border-line">
                             <div class="stat-cell bg-card p-2.5 sm:p-3.5 min-w-0">
                                 <div class="text-[9.5px] sm:text-[10.5px] font-bold uppercase tracking-wider text-dim leading-tight">Chests Rolled</div>
@@ -454,7 +451,6 @@
                             </div>
                         </div>
 
-                        <!-- Live Feed -->
                         <div class="flex items-center justify-between px-3.5 sm:px-4 py-2.5 border-b border-line bg-black/20">
                             <div class="flex items-center gap-2 min-w-0">
                                 <span class="relative flex size-2 shrink-0">
@@ -509,7 +505,7 @@
                 </div>
 
                 <div class="rounded-xl border border-line bg-black/30 px-3.5 py-2.5 flex items-center justify-between text-[12.5px] sm:text-[13px]">
-                    <span class="text-dim">Total Chests Rolled</span>
+                    <span id="jackpotModalRollsLabel" class="text-dim">Total Chests Rolled</span>
                     <span id="jackpotModalRolls" class="tnum font-black text-accent text-[15px] sm:text-[16px]">1</span>
                 </div>
 
@@ -546,6 +542,8 @@
             isSpinning: false,
             isAutoRolling: false,
             autoRollTimer: null,
+            autoSessionRolls: 0,
+            autoSessionBest: null,
             soundEnabled: true,
             logEntries: 0
         };
@@ -714,7 +712,6 @@
 
             ctx.clearRect(0, 0, w, h);
 
-            // Outer ambient halo
             ctx.save();
             ctx.translate(cx, cy);
             const halo = ctx.createRadialGradient(0, 0, radius * 0.85, 0, 0, radius * 1.12);
@@ -763,7 +760,6 @@
                 ctx.restore();
             }
 
-            // Mythic golden sliver at angle 0 (with glow)
             const visualSliverHalfAngle = 0.015;
             ctx.save();
             ctx.shadowColor = "rgba(255, 229, 0, 0.85)";
@@ -781,7 +777,6 @@
             ctx.fill();
             ctx.restore();
 
-            // Center laser line for Ticket #1
             ctx.beginPath();
             ctx.moveTo(0, 0);
             ctx.lineTo(radius, 0);
@@ -789,7 +784,6 @@
             ctx.lineWidth = Math.max(1.5, w * 0.0035);
             ctx.stroke();
 
-            // Prize label
             ctx.save();
             ctx.textAlign = "right";
             ctx.fillStyle = "#ffe500";
@@ -799,7 +793,6 @@
             ctx.fillText(`★ PIRATE TOKEN (1/${state.currentOdds.toLocaleString()}) ★`, radius * 0.89, -radius * 0.024);
             ctx.restore();
 
-            // Outer rim — metallic gradient
             const rimGrad = ctx.createLinearGradient(-radius, -radius, radius, radius);
             rimGrad.addColorStop(0, "#2e2e33");
             rimGrad.addColorStop(0.35, "#1a1a1d");
@@ -811,21 +804,18 @@
             ctx.strokeStyle = rimGrad;
             ctx.stroke();
 
-            // Gold hairline
             ctx.beginPath();
             ctx.arc(0, 0, radius * 1.022, 0, Math.PI * 2);
             ctx.lineWidth = radius * 0.008;
             ctx.strokeStyle = "rgba(255, 229, 0, 0.5)";
             ctx.stroke();
 
-            // Inner hairline highlight
             ctx.beginPath();
             ctx.arc(0, 0, radius * 0.975, 0, Math.PI * 2);
             ctx.lineWidth = Math.max(1, radius * 0.004);
             ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
             ctx.stroke();
 
-            // Rim pegs
             const pegCount = 36;
             for (let i = 0; i < pegCount; i++) {
                 const pegAngle = (i / pegCount) * Math.PI * 2;
@@ -958,6 +948,8 @@
         function finalizeBatchResults(batchResult) {
             const { count, hits, bestTicket } = batchResult;
             const oddsPool = state.currentOdds;
+            const isAuto = state.isAutoRolling;
+            const sessionRolls = state.autoSessionRolls;
 
             state.totalRolls += count;
             state.totalWins += hits;
@@ -972,10 +964,16 @@
             if (hits > 0) {
                 resultBanner.className = "w-full rounded-xl bg-gradient-to-b from-yellow-500/[0.12] to-yellow-500/[0.04] border-2 border-accent p-3 sm:p-3.5 shadow-[0_0_40px_rgba(255,229,0,0.25),inset_0_1px_0_rgba(255,255,255,0.1)]";
                 resultBadge.className = "inline-block rounded px-2 py-0.5 text-[10px] font-black uppercase tracking-wider bg-accent text-[#1c1f3a] shadow-[0_0_14px_rgba(255,229,0,0.5)]";
-                resultBadge.textContent = `★ PIRATE SHOP ACCESS UNBOXED! (${hits}×) ★`;
-                resultHeadline.textContent = count === 1
-                    ? `TICKET #1 — PIRATE SHOP ACCESS TOKEN HIT!`
-                    : `UNBOXED PIRATE TOKEN (${hits}×) IN ${count.toLocaleString()} CHESTS!`;
+
+                if (isAuto) {
+                    resultBadge.textContent = `★ AUTO-SPIN HIT! (${hits}×) ★`;
+                    resultHeadline.textContent = `AUTO-SPIN SESSION: TOKEN FOUND IN ${sessionRolls.toLocaleString()} CHESTS!`;
+                } else {
+                    resultBadge.textContent = `★ PIRATE SHOP ACCESS UNBOXED! (${hits}×) ★`;
+                    resultHeadline.textContent = count === 1
+                        ? `TICKET #1 — PIRATE SHOP ACCESS TOKEN HIT!`
+                        : `UNBOXED PIRATE TOKEN (${hits}×) IN ${count.toLocaleString()} CHESTS!`;
+                }
                 resultSubline.textContent = "0 tickets away (Exact Hit!)";
 
                 playJackpotFanfare();
@@ -990,12 +988,19 @@
                 resultBadge.className = `inline-block rounded px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wider ${
                     isNearMiss ? 'bg-buff/20 text-buff border border-buff/30' : 'bg-raised text-dim border border-line'
                 }`;
-                resultBadge.textContent = count === 1
-                    ? (isNearMiss ? "NEAR MISS! TOP 0.7% CHEST" : "SINGLE CHEST RESULT")
-                    : `BATCH OF ${count.toLocaleString()} CHESTS`;
-                resultHeadline.textContent = count === 1
-                    ? `Rolled Ticket #${bestTicket.toLocaleString()} (Need #1)`
-                    : `Closest in Batch: Ticket #${bestTicket.toLocaleString()}`;
+
+                if (isAuto) {
+                    const sessionBest = state.autoSessionBest !== null ? state.autoSessionBest : bestTicket;
+                    resultBadge.textContent = `AUTO-SPIN · ${sessionRolls.toLocaleString()} CHESTS`;
+                    resultHeadline.textContent = `Session closest so far: Ticket #${sessionBest.toLocaleString()}`;
+                } else {
+                    resultBadge.textContent = count === 1
+                        ? (isNearMiss ? "NEAR MISS! TOP 0.7% CHEST" : "SINGLE CHEST RESULT")
+                        : `BATCH OF ${count.toLocaleString()} CHESTS`;
+                    resultHeadline.textContent = count === 1
+                        ? `Rolled Ticket #${bestTicket.toLocaleString()} (Need #1)`
+                        : `Closest in Batch: Ticket #${bestTicket.toLocaleString()}`;
+                }
                 resultSubline.textContent = `${distance.toLocaleString()} away from Token`;
 
                 playBatchChime(bestTicket);
@@ -1057,12 +1062,18 @@
 
         function startAutoRollUntilHit() {
             state.isAutoRolling = true;
+            state.autoSessionRolls = 0;
+            state.autoSessionBest = null;
             rollUntilBtnText.textContent = "Stop Auto-Spin";
             rollUntilHitBtn.classList.add('border-accent', 'bg-accent/15');
 
             function stepChunk() {
                 if (!state.isAutoRolling) return;
                 const batchResult = simulateRolls(2500);
+                state.autoSessionRolls += batchResult.count;
+                if (state.autoSessionBest === null || batchResult.bestTicket < state.autoSessionBest) {
+                    state.autoSessionBest = batchResult.bestTicket;
+                }
                 state.wheelAngle = batchResult.hits > 0 ? 0 : (state.wheelAngle + 0.7) % (Math.PI * 2);
                 state.lastTicket = batchResult.bestTicket;
                 drawWheel(state.wheelAngle);
@@ -1090,10 +1101,21 @@
          * JACKPOT MODAL & CONFETTI
          ********************************************************************/
         function openJackpotModal(batchCount, hits) {
-            document.getElementById('jackpotModalRolls').textContent = state.totalRolls.toLocaleString();
-            document.getElementById('jackpotModalSummary').textContent = batchCount === 1
-                ? `You unboxed the Pirate Shop Access Token on a single chest spin (1 in ${state.currentOdds.toLocaleString()})!`
-                : `You unboxed the Pirate Shop Access Token (${hits}×) in a batch of ${batchCount.toLocaleString()} chests!`;
+            const wasAuto = state.isAutoRolling;
+            const sessionRolls = state.autoSessionRolls;
+
+            const summary = wasAuto
+                ? `Your auto-spin session found the Pirate Shop Access Token (${hits}×) after ${sessionRolls.toLocaleString()} chests!`
+                : batchCount === 1
+                    ? `You unboxed the Pirate Shop Access Token on a single chest spin (1 in ${state.currentOdds.toLocaleString()})!`
+                    : `You unboxed the Pirate Shop Access Token (${hits}×) in a batch of ${batchCount.toLocaleString()} chests!`;
+
+            document.getElementById('jackpotModalSummary').textContent = summary;
+            document.getElementById('jackpotModalRollsLabel').textContent = wasAuto
+                ? "Auto-Spin Session Chests"
+                : "Total Chests Rolled";
+            document.getElementById('jackpotModalRolls').textContent = (wasAuto ? sessionRolls : state.totalRolls).toLocaleString();
+
             const modal = document.getElementById('jackpotModal');
             modal.classList.remove('hidden');
             modal.classList.add('flex');
@@ -1205,6 +1227,8 @@
             state.lastTicket = null;
             state.wheelAngle = 0;
             state.logEntries = 0;
+            state.autoSessionRolls = 0;
+            state.autoSessionBest = null;
             updateDashboardStats();
             drawWheel(0);
             resultBanner.className = "w-full rounded-xl border border-line bg-gradient-to-b from-white/[0.02] to-transparent p-3 sm:p-3.5 transition-all duration-300";
@@ -1218,8 +1242,6 @@
             historyFeed.innerHTML = `<div class="py-12 text-center text-faint text-[12px]">Choose how many chests to roll and spin the wheel.</div>`;
         });
 
-        // Resize observer for the wheel parent — handles orientation changes,
-        // mobile keyboard show/hide, and dynamic layout shifts
         if (typeof ResizeObserver !== 'undefined') {
             let rafId = null;
             const ro = new ResizeObserver(() => {
